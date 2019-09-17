@@ -31,8 +31,10 @@ int main(){
         cin>>c>>d;
         int j=arr[c].size();
         for(int i=0;i<j;i++){
-            if(arr[c][i]==d)
-                {s="YES";}
+            if(arr[c][i]==d){
+                s="YES";
+                break;
+            }
             else
                 {s="NO";}
         }
