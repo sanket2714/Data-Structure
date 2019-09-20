@@ -39,3 +39,31 @@ int main() {
     printGraph(adj,v);
     return 0;
 }
+
+/*OUTPUT------
+
+0 Connected to - 
+1 with weight = 10
+4 with weight = 20
+
+1 Connected to - 
+0 with weight = 10
+2 with weight = 30
+3 with weight = 40
+4 with weight = 50
+
+2 Connected to - 
+1 with weight = 30
+3 with weight = 60
+
+3 Connected to - 
+1 with weight = 40
+2 with weight = 60
+4 with weight = 70
+
+4 Connected to - 
+0 with weight = 20
+1 with weight = 50
+3 with weight = 70
+
+*/
