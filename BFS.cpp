@@ -37,7 +37,7 @@ int main() {
 	    cin>>a>>b;
 	    edge(a,b);
 	}
-	for(int i=0;i<n;i++){
+	for(int i=0;i<e;i++){
 	    if(!v[i])
 	    bfs(i);
 	}
