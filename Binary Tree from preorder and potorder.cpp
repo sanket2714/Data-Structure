@@ -1,3 +1,7 @@
+/*
+time: O(n^2) when tree is left/right skewed
+*/
+
 struct node* constructUtil(int pre[], int post[], int &preindex,int l, int h,int size){
 	if(l>h || *preindex >= size){
 		return NULL;
