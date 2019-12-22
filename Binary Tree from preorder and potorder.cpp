@@ -1,5 +1,6 @@
 /*
 time: O(n^2) when tree is left/right skewed
+can be improved by using unordered_map for searching index
 */
 
 struct node* constructUtil(int pre[], int post[], int &preindex,int l, int h,int size){
