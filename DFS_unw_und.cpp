@@ -2,30 +2,20 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-vector<bool> visited;
 
 void addedge(vector<int> adj[],int a,int b){
     adj[a].push_back(b);
     adj[b].push_back(a);
 }
 
-//For marking every vertex related to the parent vertex as visited
-void DFSutil(int u,vector<int> adj[],vector<bool> &visited){
+//For checking every vertex is either visited or not
+void DFS(int u, vector<int> adj[], int visited){
     visited[u]=true;
     cout<<u<<" ";
-    for(int i=0;i<adj[u].size();i++){
-        if(visited[adj[u][i]]==false){
-            DFSutil(adj[u][i],adj,visited);
-        }
-    }
-}
-
-//For checking every vertex is either visited or not
-void DFS(vector<int> adj[],int V){
-    vector<bool> visited(V,false);
-    for(int u=0;u<V;u++){
-        if(visited[u]==false){
-            DFSutil(u,adj,visited);
+    vector<int>::iterator i;
+    for(i=adj[u].begin() ; i!=adj[u].end() ; i++){
+        if(!visited[*i]){
+            DFS(*i,adj,visited);
         }
     }
 }
@@ -43,6 +33,8 @@ int main() {
     addedge(adj,2,3);
     addedge(adj,3,4);
     
-    DFS(adj,v);
+    bool visited[V]={false};
+    
+    DFS(0,adj,visited);
     return 0;
 }
